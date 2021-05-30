@@ -1,0 +1,29 @@
+.header-component
+{
+    display: flex;
+    height: 6rem;
+    background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 75%);
+    border-top: thistle solid 0.4rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.header-wrapper
+{
+    position: relative;
+}
+
+.header-app-title {
+    margin-top: 1.2rem;
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    white-space: nowrap;
+    color: white;
+}
+
+.fa-mug-hot {
+    font-size: 3.5rem;
+    margin-left: 2rem;
+}
