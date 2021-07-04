@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import { findComponentAttribute } from './../../../TestUtils/TestUtils.js';
-
+import { findComponentAttribute, checkMyPropTypes } from './../../utils/TestUtils.js';
 import Headline from './Headline.js';
 
 const setup = (props={}) =>
@@ -13,6 +11,24 @@ const setup = (props={}) =>
 
 describe('Headline component test', ()=>
 {
+
+    describe('Headline props test', ()=>
+    {
+        test('should have no warning', ()=>
+        {
+            const myProps = 
+            {
+                headerOfHeadline: 'test headerOfHeadline', 
+                descpOfHeadline: 'test descpOfHeadline'
+            };
+
+            const myPropsResult = checkMyPropTypes(Headline, myProps);
+            expect(myPropsResult).toBeUndefined();
+        });
+    });
+
+
+
     describe('Headline have props test', ()=>
     {
         let component;
@@ -46,9 +62,7 @@ describe('Headline component test', ()=>
         });
     });
 
-
-
-    describe('does not have props test', ()=>
+    describe('Headline does not have props test', ()=>
     {
         let component;
         beforeEach(()=>
@@ -62,4 +76,5 @@ describe('Headline component test', ()=>
             expect(wrapper.length).toBe(0);
         });
     });
+    
 });
